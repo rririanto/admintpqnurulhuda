@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "assessments",
+  "info": {
+    "name": "Penilaian"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "tanggal": {
+      "type": "date"
+    },
+    "materi": {
+      "type": "text"
+    },
+    "pencapaian": {
+      "type": "text"
+    },
+    "book": {
+      "model": "book",
+      "via": "assessments"
+    },
+    "wali_kelas": {
+      "type": "string"
+    },
+    "checked": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

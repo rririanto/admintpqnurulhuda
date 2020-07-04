@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "books",
+  "info": {
+    "name": "Book"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "kelas": {
+      "type": "string"
+    },
+    "santris": {
+      "via": "books",
+      "model": "santri"
+    },
+    "assessments": {
+      "via": "book",
+      "collection": "assessment"
+    }
+  }
+}

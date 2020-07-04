@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "santris",
+  "info": {
+    "name": "Santri"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "nama": {
+      "type": "string"
+    },
+    "kelas": {
+      "type": "string"
+    },
+    "umur": {
+      "type": "string"
+    },
+    "nik": {
+      "type": "string"
+    },
+    "books": {
+      "collection": "book",
+      "via": "santris"
+    },
+    "tgl_lahir": {
+      "type": "date"
+    }
+  }
+}
