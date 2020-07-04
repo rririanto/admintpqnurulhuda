@@ -1,5 +1,5 @@
 import { h, Component } from "preact";
-import Degree from "../../components/degree";
+import Degree from "../../components/list_degree";
 
 export default class Admin extends Component {
   state = {

@@ -7,7 +7,7 @@ import Header from './header';
 import Admin from '../routes/admin';
 import Profile from '../routes/profile';
 import Users from '../routes/santris';
-import BookSantri from '../routes/booksantri'
+import BookSantri from '../routes/books'
 
 export default class App extends Component {
 	

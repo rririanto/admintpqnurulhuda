@@ -1,7 +1,7 @@
 import { h, Component } from "preact";
 import { Link } from "preact-router/match";
-import FormAssessment from "../../components/assessment_form";
-import SantriAssesment from "../../components/assessments";
+import FormAssessment from "../../components/form_assessment";
+import SantriAssesment from "../../components/list_assessment";
 
 export default class BookSantri extends Component {
   state = {

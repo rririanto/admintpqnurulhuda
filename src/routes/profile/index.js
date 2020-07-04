@@ -3,7 +3,7 @@ import { Link } from "preact-router/match";
 
 import UserProfile from "../../components/santri_profile";
 import FormEditSantri from "../../components/form_edit_santri";
-import Book from "../../components/book";
+import Book from "../../components/list_book";
 import BookForm from "../../components/form_book";
 
 export default class Profile extends Component {
