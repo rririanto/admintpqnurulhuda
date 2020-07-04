@@ -1,11 +1,10 @@
 import { h, Component } from "preact";
-import { Link } from "preact-router/match";
 import FormAssessment from "../../components/form_assessment";
 import SantriAssesment from "../../components/list_assessment";
+import ButtonBack from "../../components/button_back";
 
 export default class BookSantri extends Component {
   state = {
-    loading: true,
     assessments: [],
     santris_id: null,
   };
@@ -26,7 +25,7 @@ export default class BookSantri extends Component {
       return_type: "json",
     };
     let resp = await this.fetchData(data);
-    this.setState({ assessments: resp.assessments, santris_id: resp.santris.id, loading: false });
+    this.setState({ assessments: resp.assessments, santris_id: resp.santris.id });
   };
 
   componentWillMount() {
@@ -53,7 +52,7 @@ export default class BookSantri extends Component {
       method: "DELETE",
       return_type: "json",
     };
-    let resp = await this.fetchData(data);
+    this.fetchData(data);
     this.setState({
       assessments: [...this.state.assessments.filter((item) => item.id !== id)],
     });
@@ -64,25 +63,7 @@ export default class BookSantri extends Component {
   render(props, { assessments, santris_id }) {
     return (
       <section class="text-gray-700 body-font relative">
-        <div class="inline-flex lg:justify-end ml-5 lg:ml-0 mb-10">
-          <Link
-            href={"/profile/" + santris_id}
-            class="inline-flex items-center bg-gray-200 border-0 py-1 px-3 focus:outline-none hover:bg-gray-300 rounded text-base mt-4 md:mt-0"
-          >
-            <svg
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              class="w-4 h-4 ml-1"
-              viewBox="0 0 24 24"
-            >
-              <path d="M19 12H5m7 7l-7-7 7-7"></path>
-            </svg>
-            Kembali
-          </Link>
-        </div>
+        <ButtonBack url={"/profile/" + santris_id}/>
         <div class="container px-5 py-5 mx-auto">
           <FormAssessment onSubmit={this.addNewItem} bookid={props.id} />
           {assessments && (

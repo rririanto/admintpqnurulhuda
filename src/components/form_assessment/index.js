@@ -8,7 +8,7 @@ export default class FormAssessment extends Component {
     this.props.onSubmit(this.state, this.props.bookid);
     this.setState({ tanggal: "", materi: "", pencapaian: "" });
   };
-  render(props, state) {
+  render({}, state) {
     return (
       <form onSubmit={this.onSubmit}>
         <div class="mx-auto mb-10">

@@ -1,14 +1,13 @@
 import { h, Component } from "preact";
-import { Link } from "preact-router/match";
-
 import SantriList from "../../components/list_santri";
-import SantriForm from "../../components/form_addsantri";
+import FromAddSantri from "../../components/form_addsantri";
+import ButtonBack from "../../components/button_back";
 
 export default class Users extends Component {
   state = {
-    loading: true,
     list_santri: [],
   };
+
   fetchData = async (data) => {
     let options = {
       method: data.method,
@@ -25,7 +24,7 @@ export default class Users extends Component {
       return_type: "json",
     };
     let resp = await this.fetchData(data);
-    this.setState({ list_santri: resp, loading: false });
+    this.setState({ list_santri: resp });
   };
 
   componentWillMount() {
@@ -48,32 +47,13 @@ export default class Users extends Component {
   };
 
   // Note: `user` comes from the URL, courtesy of our router
-  render(props) {
-    const { list_santri } = this.state;
+  render({}, state) {
     return (
       <section class="text-gray-700 body-font">
-        <div class="inline-flex lg:justify-end ml-5 lg:ml-0">
-          <Link
-            href="/"
-            class="inline-flex items-center bg-gray-200 border-0 py-1 px-3 focus:outline-none hover:bg-gray-300 rounded text-base mt-4 md:mt-0"
-          >
-            <svg
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              class="w-4 h-4 ml-1"
-              viewBox="0 0 24 24"
-            >
-              <path d="M19 12H5m7 7l-7-7 7-7"></path>
-            </svg>
-            Kembali
-          </Link>
-        </div>
+        <ButtonBack url="/"/>
         <div class="container">
-          {list_santri && <SantriList data={this.state.list_santri} />}
-          <SantriForm onSubmit={this.addNewItem} />
+          {state.list_santri && <SantriList data={state.list_santri} />}
+          <FromAddSantri onSubmit={this.addNewItem} />
         </div>
       </section>
     );

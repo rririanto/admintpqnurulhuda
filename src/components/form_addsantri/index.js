@@ -1,7 +1,7 @@
 import { h, Component } from "preact";
 import linkState from "linkstate";
 
-export default class SantriForm extends Component {
+export default class FromAddSantri extends Component {
   state = { nama: "", umur: "", tgl_lahir: "", nik:"" };
   onSubmit = (e) => {
     e.preventDefault();
@@ -9,7 +9,7 @@ export default class SantriForm extends Component {
     this.setState({ nama: "", umur: "", tgl_lahir: "", nik:""});
   };
 
-  render(props, state) {
+  render({}, state) {
     return (
       <form onSubmit={this.onSubmit}>
         <div class="lg:w-2/4 md:w-2/3 mx-auto bg-gray-200 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0">

@@ -1,14 +1,12 @@
 import { h, Component } from "preact";
-import { Link } from "preact-router/match";
-
 import UserProfile from "../../components/santri_profile";
 import FormEditSantri from "../../components/form_edit_santri";
 import Book from "../../components/list_book";
 import BookForm from "../../components/form_book";
+import ButtonBack from "../../components/button_back";
 
 export default class Profile extends Component {
   state = {
-    loading: true,
     edit: false,
     degree: [],
     user_profile: [],
@@ -37,7 +35,6 @@ export default class Profile extends Component {
     const degree = books.map((item) => item.kelas);
     this.setState({
       user_profile: restOf,
-      loading: false,
       books: books,
       degree: degree,
     });
@@ -76,29 +73,11 @@ export default class Profile extends Component {
   componentDidMount() {
     this.getProfile(this.props.user);
   }
-  // Note: `user` comes from the URL, courtesy of our router
-  render({ user }, { books, user_profile, degree, edit }) {
+
+  render({}, { books, user_profile, degree, edit }) {
     return (
       <section class="text-gray-700 body-font">
-        <div class="inline-flex lg:justify-end ml-5 lg:ml-0">
-          <Link
-            href={"/santris/" + user_profile.kelas}
-            class="inline-flex items-center bg-gray-200 border-0 py-1 px-3 focus:outline-none hover:bg-gray-300 rounded text-base mt-4 md:mt-0"
-          >
-            <svg
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              class="w-4 h-4 ml-1"
-              viewBox="0 0 24 24"
-            >
-              <path d="M19 12H5m7 7l-7-7 7-7"></path>
-            </svg>
-            Kembali
-          </Link>
-        </div>
+        <ButtonBack url={"/santris/" + user_profile.kelas}/>
         <div class="container px-5 py-0 mx-auto flex flex-col">
           <UserProfile
             user_profile={user_profile}
