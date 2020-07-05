@@ -9,7 +9,7 @@ Tujuan adalah untuk mentransformasikan Buku fisik menjadi buku penilaian elektro
 * Skor [PageSpeed](https://developers.google.com/speed/pagespeed/insights): 100 dengan kecepatan load 0.8 detik.
 * _Load time_ (menurut [Pingdom](https://tools.pingdom.com/#5cc7b539c8000000)): 453 milidetik 
 * Support PWA bisa di install pada device Android dan berjalan seperti layaknya aplikasi android. 
-* Karena sudah suport PWA maka Bisa di convert menjadi .apk dan diupload di playstore menggunakan [bubblewrap](https://github.com/GoogleChromeLabs/bubblewrap) ataupun (PWABuilder)[https://www.pwabuilder.com/]
+* Karena sudah suport PWA maka Bisa di convert menjadi .apk dan diupload di playstore menggunakan [bubblewrap](https://github.com/GoogleChromeLabs/bubblewrap) ataupun [PWABuilder](https://www.pwabuilder.com/)
 * UI admin simple dan enak dipandang karena menggunakan framework CSS [tailwindcss](https://tailwindcss.com/)
 * Zero Cost: Tidak ada biaya server hosting, database maupun domain karena semua menggunakan layanan SaaS free dari [netlify hosting](https://netlify.com/) dan [heroku](http://heroku.com/) sebagai hosting database. 
 * Menggunakan [Strapi API](http://strapi.io/) agar perancangan API bisa cepat dan stabil. 
