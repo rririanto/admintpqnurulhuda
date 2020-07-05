@@ -1,5 +1,4 @@
 # admintpqnurulhuda
----
 
 Admin TPQ Nurul Huda - management panel untuk [Buku Penilaian Online TPQ Nurul Huda Banyuwangi](https://github.com/jimmyromanticdevil/bpo-tpq)
 
